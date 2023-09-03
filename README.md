@@ -3,7 +3,7 @@
 Cinemate is a Java-based application that allows users to search for movies on IMDb using the IMDb API. This application provides a simple graphical user interface (GUI) for entering a movie name, and it displays information about the movie, including its title, release year, and cast members.
 
 
-##FEATURES
+## FEATURES
 
 User-friendly GUI for entering movie names and initiating searches.
 Real-time retrieval of movie details from the IMDb API.
@@ -11,7 +11,8 @@ Display of movie information, including title, release year, and cast members.
 Error handling for cases where movie information is not available.
 
 
-##USAGE
+## USAGE
+
 1. Launch the Seeker application.
 2. Enter the name of the movie you want to search for in the input field.
 3. Click the "SEARCH" button to initiate the search.
@@ -19,5 +20,6 @@ Error handling for cases where movie information is not available.
 5. If there are multiple search results, they will be displayed one by one.
 
 
-##DEPENDENCY MANAGEMENT
+## DEPENDENCY MANAGEMENT
+
 Maven is used as the Java project tool for dependency management. The project's dependencies are defined in the `pom.xml` file.
