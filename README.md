@@ -4,6 +4,7 @@ Cinemate is a Java-based application that allows users to search for movies on I
 
 
 **FEATURES**
+
 User-friendly GUI for entering movie names and initiating searches.
 Real-time retrieval of movie details from the IMDb API.
 Display of movie information, including title, release year, and cast members.
