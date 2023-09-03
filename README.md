@@ -13,7 +13,7 @@ Error handling for cases where movie information is not available.
 
 ## USAGE
 
-1. Launch the Seeker application.
+1. Launch the Cinemate application.
 2. Enter the name of the movie you want to search for in the input field.
 3. Click the "SEARCH" button to initiate the search.
 4. The movie details, including title, release year, and cast members, will be displayed in the output area.
