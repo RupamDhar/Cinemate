@@ -26,7 +26,7 @@ public class Cinemate
         frame.setBackground(Color.WHITE);
         frame.setLayout(new BorderLayout());
 
-        //creating input parameters and buttons
+        //creating input parameters and button
         JLabel nameLabel = new JLabel("NAME:");
         JTextField nameTextField = new JTextField();
         nameTextField.setColumns(20);
