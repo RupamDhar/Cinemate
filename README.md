@@ -27,4 +27,4 @@ Maven is used as the Java project tool for dependency management. The project's 
 
 ## To keep in mind
 
-Remember to use your own Rapid-API Key in `CinemateRequest.class : request building`.
+In `CinemateRequest.class` : Remember to use your own X-RapidAPI-Key in `request` build.
