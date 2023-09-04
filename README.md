@@ -23,3 +23,8 @@ Error handling for cases where movie information is not available.
 ## Dependency Management
 
 Maven is used as the Java project tool for dependency management. The project's dependencies are defined in the `pom.xml` file.
+
+
+### To keep in mind
+
+Remember to use your own Rapid-API Key in `CinemateRequest.class : request building`.
