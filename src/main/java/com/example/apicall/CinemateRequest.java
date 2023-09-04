@@ -15,6 +15,8 @@ public class CinemateRequest
     CinemateRequest(String movieRequest)
     {
         System.out.print("\033[H\033[2J");
+        //clearing result content for next data to be displayed
+        result.setLength(0);
 
         HttpRequest request = HttpRequest.newBuilder()
 		.uri(URI.create("https://imdb8.p.rapidapi.com/auto-complete?q="+movieRequest))
@@ -48,7 +50,7 @@ public class CinemateRequest
                 }
                 movieCast=jsonResponse.get("d").getAsJsonArray().get(i).getAsJsonObject().get("s").toString();
                 
-                result.append(movieName+" -> "+movieReleaseYear+" : "+movieCast+"<br>");
+                result.append(movieName+" => "+movieReleaseYear+" : "+movieCast+"<br>");
             }
         } 
         catch (IOException | InterruptedException e) {

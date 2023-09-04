@@ -21,12 +21,12 @@ public class Cinemate
         //initializing JFrame
         JFrame frame = new JFrame("Cinemate");
         frame.setVisible(true);
-        frame.setSize(500, 500);  
+        frame.setSize(500, 300);  
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setBackground(Color.WHITE);
         frame.setLayout(new BorderLayout());
 
-        //creating input parameters and button
+        //creating input parameters and buttons
         JLabel nameLabel = new JLabel("NAME:");
         JTextField nameTextField = new JTextField();
         nameTextField.setColumns(20);
@@ -40,19 +40,22 @@ public class Cinemate
         frame.add(jInputPanel, BorderLayout.NORTH);
 
         //setting output
-        JLabel movieDetails = new JLabel("OUTPUT HERE");
-        movieDetails.setHorizontalAlignment(SwingConstants.CENTER);
-        movieDetails.setSize(200, 200);
-        frame.add(movieDetails, BorderLayout.CENTER);
+        JLabel movieDetailsLabel = new JLabel("OUTPUT HERE");
+        movieDetailsLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        movieDetailsLabel.setSize(200, 200);
+        frame.add(movieDetailsLabel, BorderLayout.CENTER);
 
         //fetching results on clicking "SEARCH"
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                movieDetails.setText("");
+
+                movieDetailsLabel.setText("");
                 //sending http request through constructor
-                CinemateRequest sAPIobj = new CinemateRequest(nameTextField.getText());
-                movieDetails.setText("<html>"+sAPIobj.getMovieDetails().toString()+"</html>");
+                CinemateRequest sAPIobj = new CinemateRequest(nameTextField.getText().replace(" ", ""));
+                //fetching and displaying response
+                movieDetailsLabel.setText("<html>"+sAPIobj.getMovieDetails().toString().replace("\"", "")+"</html>");
+                
             }
         });
     }
