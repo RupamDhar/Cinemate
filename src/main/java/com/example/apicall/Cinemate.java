@@ -26,7 +26,7 @@ public class Cinemate
         frame.setBackground(Color.WHITE);
         frame.setLayout(new BorderLayout());
 
-        //creating input parameters and buttons
+        //creating input parameters and button
         JLabel nameLabel = new JLabel("NAME:");
         JTextField nameTextField = new JTextField();
         nameTextField.setColumns(20);
@@ -45,11 +45,12 @@ public class Cinemate
         movieDetailsLabel.setSize(200, 200);
         frame.add(movieDetailsLabel, BorderLayout.CENTER);
 
-        //fetching results on clicking "SEARCH"
+        //fetching and displaying results on clicking "SEARCH"
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                System.out.print("\033[H\033[2J");
                 movieDetailsLabel.setText("");
                 //sending http request through constructor
                 CinemateRequest sAPIobj = new CinemateRequest(nameTextField.getText().replace(" ", ""));
