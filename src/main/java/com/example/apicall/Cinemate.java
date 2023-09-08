@@ -7,6 +7,9 @@ import java.awt.event.ActionListener;
 
 public class Cinemate 
 {
+    //the GUI frame
+    public static JFrame frame;
+
     public static void main(String[] args)
     {
         System.out.print("\033[H\033[2J");
@@ -14,16 +17,17 @@ public class Cinemate
 
         //instance of software interface
         new Cinemate();
+        frame.setVisible(true);
     }
 
     Cinemate()
     {
         //initializing JFrame
-        JFrame frame = new JFrame("Cinemate");
-        frame.setVisible(true);
-        frame.setSize(500, 300);  
+        frame = new JFrame("Cinemate");
+        
+        frame.setSize(380, 600);  
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setBackground(Color.WHITE);
+        frame.setBackground(Color.BLACK);
         frame.setLayout(new BorderLayout());
 
         //creating input parameters and button
@@ -39,11 +43,17 @@ public class Cinemate
         jInputPanel.add(searchButton);
         frame.add(jInputPanel, BorderLayout.NORTH);
 
+        
         //setting output
-        JLabel movieDetailsLabel = new JLabel("OUTPUT HERE");
-        movieDetailsLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        movieDetailsLabel.setSize(200, 200);
-        frame.add(movieDetailsLabel, BorderLayout.CENTER);
+        JTextPane outputPane = new JTextPane();
+        outputPane.setEditable(false);
+        outputPane.setBackground(Color.BLACK);
+        outputPane.setForeground(Color.WHITE);
+        outputPane.setFont(new Font("Aptos", Font.PLAIN, 14));
+
+        JScrollPane scrollPane = new JScrollPane(outputPane);
+        scrollPane.setBorder(null);
+        frame.add(scrollPane, BorderLayout.CENTER);
 
         //fetching and displaying results on clicking "SEARCH"
         searchButton.addActionListener(new ActionListener() {
@@ -51,11 +61,10 @@ public class Cinemate
             public void actionPerformed(ActionEvent e) {
 
                 System.out.print("\033[H\033[2J");
-                movieDetailsLabel.setText("");
+                outputPane.setText("Fetching data...");
                 //sending http request through constructor
-                CinemateRequest sAPIobj = new CinemateRequest(nameTextField.getText().replace(" ", ""));
-                //fetching and displaying response
-                movieDetailsLabel.setText("<html>"+sAPIobj.getMovieDetails().toString().replace("\"", "")+"</html>");
+                CinemateRequest reqObj = new CinemateRequest(nameTextField.getText().replace(" ", ""));
+                outputPane.setText(reqObj.getMovieDetails().toString().replace("\"", ""));
                 
             }
         });
