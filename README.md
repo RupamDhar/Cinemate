@@ -16,7 +16,7 @@ Error handling for cases where movie information is not available.
 1. Launch the Cinemate application.
 2. Enter the name of the movie you want to search for in the input field.
 3. Click the "SEARCH" button to initiate the search.
-4. The movie details, including title, release year, and cast members, will be displayed in the output area.
+4. The movie details, including IMDb rating, title, release year, and cast members, will be displayed in the output area.
 5. If there are multiple search results, they will be displayed one by one.
 
 
@@ -27,4 +27,4 @@ Maven is used as the Java project tool for dependency management. The project's 
 
 ## To keep in mind
 
-In `CinemateRequest.class` : Remember to use your own X-RapidAPI-Key in `request` build.
+In `CinemateRequest.class` : Remember to use your own X-RapidAPI-Key in `request` builds.
