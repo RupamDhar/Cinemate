@@ -11,7 +11,7 @@ public class CinemateDB
     {
         String url = "jdbc:mysql://localhost:3306/demo_db";
         String user = "root";
-        String password = "ShadowFight@2";
+        String password = "your-password";
 
         String movieName = name.replace("\'", "");
         String movieReleaseYear = year;
