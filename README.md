@@ -18,6 +18,7 @@ Error handling for cases where movie information is not available.
 3. Click the "SEARCH" button to initiate the search.
 4. The movie details, including IMDb rating, title, release year, and cast members, will be displayed in the output area.
 5. If there are multiple search results, they will be displayed one by one.
+6. Movie information will also be stored in the local MySQL database.
 
 
 ## Dependency Management
