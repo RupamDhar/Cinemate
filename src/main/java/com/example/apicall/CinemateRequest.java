@@ -22,7 +22,7 @@ public class CinemateRequest
         //building http request with movie name
         HttpRequest request = HttpRequest.newBuilder()
 		.uri(URI.create("https://imdb8.p.rapidapi.com/auto-complete?q="+movieRequest))
-		.header("X-RapidAPI-Key", "539a440e07msh2ffbc076dae5b09p1c547cjsnd7327929b314")
+		.header("X-RapidAPI-Key", "your-rapidAPI-key")
 		.header("X-RapidAPI-Host", "imdb8.p.rapidapi.com")
 		.method("GET", HttpRequest.BodyPublishers.noBody())
 		.build();
@@ -109,7 +109,7 @@ public class CinemateRequest
         //creating new http request to get movie rating
         HttpRequest request = HttpRequest.newBuilder()
 		.uri(URI.create("https://imdb8.p.rapidapi.com/title/get-ratings?tconst="+movieID.replace("\"", "")))
-		.header("X-RapidAPI-Key", "539a440e07msh2ffbc076dae5b09p1c547cjsnd7327929b314")
+		.header("X-RapidAPI-Key", "your-rapidAPI-key")
 		.header("X-RapidAPI-Host", "imdb8.p.rapidapi.com")
 		.method("GET", HttpRequest.BodyPublishers.noBody())
 		.build();
